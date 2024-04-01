@@ -1,3 +1,5 @@
+import os
+from dotenv import load_dotenv
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
@@ -7,14 +9,12 @@ from app import database, schemas, models
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl='login')
 
-#SECRET_KEY
-#Algorithm
-#Expeiation time
+load_dotenv()
 
 #  openssl rand -hex 32
-SECRET_KEY = "1d8389de43ab81d8b3fe4daeb003b7a2dd1f17ffbe15e6c406e18f97f11edd43"
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30 
+SECRET_KEY = os.getenv("SECRET_KEY")
+ALGORITHM = os.getenv("ALGORITHM")
+ACCESS_TOKEN_EXPIRE_MINUTES = os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES")
 
 def create_access_token(data: dict, expires_delta: timedelta | None = None):
     to_encode = data.copy()
