@@ -27,3 +27,16 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     id: Optional[int] = None
+    
+class InfoPydantic(BaseModel):
+    # id: int
+    deviceName: str
+    power: Optional[int] = None
+    trackingModeColor: Optional[str] = None
+    connected: str
+    connectStatus: str
+    step: Optional[int] = None
+    lockMode: str
+
+    class Config:
+        from_attributes = True
