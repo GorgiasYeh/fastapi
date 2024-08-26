@@ -37,6 +37,7 @@ class InfoPydantic(BaseModel):
     connectStatus: str
     step: Optional[int] = None
     lockMode: str
+    frequency: str
 
     class Config:
         from_attributes = True

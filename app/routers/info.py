@@ -24,6 +24,8 @@ def getInfo(db: Session =Depends(get_db), current_user: int = Depends(oauth2.get
         connected=random.choice(['Y', 'N']),
         connectStatus=random.choice(['onLine', 'offLine']),
         step=random.randint(1000, 10000),
-        lockMode=random.choice(['Y', 'N']))
+        lockMode=random.choice(['Y', 'N']),
+        frequency=random.choice(['緊急','一般','低功耗'])
+        )
     
     return info

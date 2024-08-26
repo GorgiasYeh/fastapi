@@ -25,6 +25,7 @@ class Info(Base):
     connectStatus = Column(String(20), nullable=False, comment='連線狀態：onLine | offLine')
     step = Column(Integer, nullable=True, comment='時間區段內計步量')
     lockMode = Column(String(1), nullable=False, comment='是否在上鎖模式：Y|N')
+    frequency = Column(String(20), nullable=False, comment='連線更新頻率：緊急 | 一般 | 低功耗')
     
     def __repr__(self):
         return f"<Device(deviceName={self.deviceName}, power={self.power}, connected={self.connected})>"
