@@ -23,5 +23,5 @@ app.include_router(trip.router)
 
 @app.get("/")
 def read_root():
-    return {"Hello": "test CICD"}
+    return {"Hello": "World"}
 
