@@ -23,5 +23,5 @@ app.include_router(trip.router)
 
 @app.get("/")
 def read_root():
-    return {"Hello": "我在測試 FastAPI的自動部署"}
+    return {"Hello": "test CICD"}
 
